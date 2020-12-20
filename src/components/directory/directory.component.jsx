@@ -8,70 +8,81 @@ export class Directory extends React.Component {
 
     this.state = {
       sections: [{
-        title: 'hats',
+        title: 'Kitchen Set',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/c86BpTx/pexels-mark-mccammon-1080721.jpg',
-        id: 1
+        id: 1,
+        linkUrl: 'chairs'
       },
       {
-        title: 'hats',
+        title: 'Bedroom Set',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/ZxQWC3y/pexels-pixabay-262048.jpg',
-        id: 2
+        id: 2,
+        linkUrl: 'bedroom'
       },
       {
-        title: 'hats',
+        title: 'Office Furniture',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/bKcn2b6/pexels-pixabay-276583.jpg',
-        id: 3
+        id: 3,
+        linkUrl: 'office'
       },
       {
-        title: 'hats',
+        title: 'Waiting Room',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/df3YYSD/pexels-pixabay-271805.jpg',
-        id: 4
+        id: 4,
+        linkUrl: 'reception'
       },
       {
-        title: 'hats',
+        title: 'Outdoor Furniture',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/bKPWNMQ/pexels-maria-salazar-879010.jpg',
-        id: 5
+        id: 5,
+        linkUrl: 'outdoor'
       },
       {
-        title: 'hats',
+        title: 'Living Room',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/cJv38HV/pexels-vecislavas-popa-1571468.jpg',
-        id: 6
+        id: 6,
+        linkUrl: 'parlor'
       },
       {
-        title: 'hats',
+        title: 'Kitchen Set',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/9qwRntJ/pexels-pixabay-534151.jpg',
-        id: 7
+        id: 7,
+        linkUrl: 'kitchen'
       },
       {
-        title: 'hats',
+        title: 'Outdoor Furniture',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/yd8D8DF/pexels-marianne-238377.jpg',
-        id: 8
+        id: 8,
+        linkUrl: 'outdoor'
       },
       {
-        title: 'hats',
+        title: 'Fireplace',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/KWj1Nhg/pexels-victoria-borodinova-1648771.jpg',
-        id: 9
+        id: 9,
+        linkUrl: 'fireplace'
       },
       {
-        title: 'hats',
+        title: 'Living Room',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/nCtZQFv/pexels-pixabay-259580.jpg',
-        id: 10
+        id: 10,
+        linkUrl: 'parlor'
       },
       {
-        title: 'hats',
+        title: 'Living Room',
         price: '2,500.00',
         imageUrl: 'https://i.ibb.co/qWxnB0V/pexels-vecislavas-popa-1668860.jpg',
-        id: 10
+        id: 11,
+        linkUrl: 'parlor'
       }]
     }
   }
@@ -80,8 +91,8 @@ export class Directory extends React.Component {
     return (
       <div className="directory-menu">
         {
-          this.state.sections.map(({title, imageUrl, id, price}) => (
-            <MenuItem key={id} title={title} imageUrl={imageUrl} price={price} />
+          this.state.sections.map(({id, ...otherSectionProps}) => (
+            <MenuItem key={id} {...otherSectionProps} />
           ))
         }
       </div>
