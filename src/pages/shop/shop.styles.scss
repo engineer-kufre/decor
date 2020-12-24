@@ -1,3 +1,19 @@
 .shop-page{
   padding: 20px 10%;
+
+  .more{
+    display: inline-block;
+    margin: -20px 10% 80px 10%;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.558);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .more:hover{
+    background-color: rgba(0, 0, 0, 0.054);
+    color: rgb(0, 0, 0);
+  }
 }
