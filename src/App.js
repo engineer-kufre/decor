@@ -8,6 +8,8 @@ import SneakersPage from './pages/sneakers/sneakers.component'
 import JacketsPage from './pages/jackets/jackets.component'
 import WomensPage from './pages/womens/womens.component'
 import MensPage from './pages/mens/mens.component'
+import SignInPage from './pages/sign-in/sign-in.component'
+import SignUpPage from './pages/sign-up/sign-up.component'
 
 
 function App() {
@@ -22,6 +24,9 @@ function App() {
         <Route path='/jackets' component={JacketsPage} />
         <Route path='/womens' component={WomensPage} />
         <Route path='/mens' component={MensPage} />
+        <Route path='/mens' component={MensPage} />
+        <Route path='/signin' component={SignInPage} />
+        <Route path='/signup' component={SignUpPage} />
       </Switch>
     </div>
   );

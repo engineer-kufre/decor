@@ -5,11 +5,16 @@
   justify-content: space-between;
   margin-left: 5%;
   margin-bottom: 25px;
+  background-color: #fff;
+  position: fixed;
 
   .logo-container{
     height: 100%;
     width: 100px;
-    padding: 25px;
+    padding: 12px;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-style: italic;
   }
 
   .options {
