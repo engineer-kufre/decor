@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import HomePage from './pages/homepage/homepage.component';
@@ -10,26 +11,49 @@ import WomensPage from './pages/womens/womens.component'
 import MensPage from './pages/mens/mens.component'
 import SignInPage from './pages/sign-in/sign-in.component'
 import SignUpPage from './pages/sign-up/sign-up.component'
+import {auth} from './firebase/firebase.utils'
 
+class App extends React.Component {
+  constructor() {
+    super()
+  
+    this.state = {
+       currentUser : null
+    }
+  }
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route path='/hats' component={HatsPage} />
-        <Route path='/sneakers' component={SneakersPage} />
-        <Route path='/jackets' component={JacketsPage} />
-        <Route path='/womens' component={WomensPage} />
-        <Route path='/mens' component={MensPage} />
-        <Route path='/mens' component={MensPage} />
-        <Route path='/signin' component={SignInPage} />
-        <Route path='/signup' component={SignUpPage} />
-      </Switch>
-    </div>
-  );
+  unsubscribeFromAuth = null
+
+  componentDidMount(){
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user});
+      console.log(user);
+    })
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
+  }
+  
+  render(){
+    return (
+      <div>
+        <Header currentUser={this.state.currentUser} />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route path='/hats' component={HatsPage} />
+          <Route path='/sneakers' component={SneakersPage} />
+          <Route path='/jackets' component={JacketsPage} />
+          <Route path='/womens' component={WomensPage} />
+          <Route path='/mens' component={MensPage} />
+          <Route path='/mens' component={MensPage} />
+          <Route path='/signin' component={SignInPage} />
+          <Route path='/signup' component={SignUpPage} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
