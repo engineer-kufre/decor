@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
+import { Link } from 'react-router-dom'
 import {signInWithGoogle} from '../../firebase/firebase.utils'
 import './sign-in.styles.scss'
 
@@ -32,7 +33,7 @@ export default class SignIn extends Component {
         <div className='sign-in-image' style={{backgroundImage: `url("https://i.ibb.co/bKcn2b6/pexels-pixabay-276583.jpg")`}}></div>
         <div className="sign-in-form">
           <div className='sign-in'>
-            <h2>I already have an account</h2>
+            <h2>Already have an account?</h2>
             <span>Sign in with your email and password</span>
 
             <form onSubmit={this.handleSubmit}>
@@ -44,6 +45,7 @@ export default class SignIn extends Component {
                 <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign In With Google </CustomButton>
               </div>
             </form>
+            <span>Don't have an account? Click <Link to='/signup'>here</Link> to Sign Up</span>
           </div>
         </div>
       </div>

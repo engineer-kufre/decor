@@ -1,8 +1,8 @@
-.sign-in-page{
+.sign-up-page{
   display: flex;
 
 
-  .sign-in-image{
+  .sign-up-image{
     margin-top: 70px;
     height: 90.5vh;
     flex: 0.75;
@@ -10,25 +10,19 @@
     background-size: cover;
   }
   
-  .sign-in-form{
+  .sign-up-form{
     flex: 1;
 
-    .sign-in{
+    .sign-up{
       flex: 1;
       width: 70%;
       margin: 0 auto;
-      padding-top: 25vh;
-
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-      }
+      padding-top: 15vh;
     }
   }
 
   @media screen and (max-width: 900px) {
-    .sign-in-image {
+    .sign-up-image {
       flex: 0;
     }
   }
